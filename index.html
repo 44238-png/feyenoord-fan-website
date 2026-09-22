@@ -3,55 +3,45 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Feyenoord Nieuws 🔴⚪</title>
+
+<title>Feyenoord Fans 🔴⚪</title>
 
 <style>
-*{box-sizing:border-box;margin:0;padding:0}
 
-:root{
-    --red:#e30613;
-    --dark:#080808;
-    --card:#151515;
-    --card2:#202020;
-    --white:#fff;
-    --muted:#aaa;
-    --green:#25d366;
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
 }
 
-html{scroll-behavior:smooth}
+html{
+    scroll-behavior:smooth;
+}
 
 body{
     font-family:Arial,Helvetica,sans-serif;
-    background:var(--dark);
-    color:var(--white);
+    background:#080808;
+    color:white;
 }
 
-a{
-    color:inherit;
-    text-decoration:none;
-}
+/* NAV */
 
-.container{
-    width:min(1200px,92%);
-    margin:auto;
-}
-
-/* NAVBAR */
-
-.navbar{
+nav{
     position:sticky;
     top:0;
     z-index:1000;
-    background:rgba(5,5,5,.96);
-    border-bottom:2px solid var(--red);
-    backdrop-filter:blur(12px);
+    background:rgba(5,5,5,.97);
+    border-bottom:2px solid #e30613;
 }
 
-.nav-inner{
-    min-height:72px;
+.nav{
+    max-width:1200px;
+    margin:auto;
+    min-height:70px;
     display:flex;
     align-items:center;
     justify-content:space-between;
+    padding:0 20px;
 }
 
 .logo{
@@ -59,30 +49,30 @@ a{
     font-weight:1000;
 }
 
-.logo-red{
-    color:var(--red);
+.logo span{
+    color:#e30613;
 }
 
-.nav-links{
+.links{
     display:flex;
-    gap:24px;
+    gap:25px;
 }
 
-.nav-links a{
-    font-size:14px;
-    font-weight:800;
+.links a{
     color:#ddd;
+    text-decoration:none;
+    font-weight:bold;
 }
 
-.nav-links a:hover{
-    color:#ff3c48;
+.links a:hover{
+    color:#e30613;
 }
 
 .menu{
     display:none;
-    border:0;
-    background:var(--red);
+    background:#e30613;
     color:white;
+    border:0;
     border-radius:8px;
     padding:10px 14px;
     font-size:20px;
@@ -94,111 +84,125 @@ a{
     min-height:520px;
     display:flex;
     align-items:center;
+
     background:
-        linear-gradient(
-            90deg,
-            rgba(0,0,0,.96),
-            rgba(0,0,0,.60)
-        ),
         radial-gradient(
             circle at 80% 40%,
             rgba(227,6,19,.35),
             transparent 45%
+        ),
+        linear-gradient(
+            90deg,
+            #050505,
+            #160305
         );
-    border-bottom:1px solid #333;
 }
 
 .hero-content{
-    padding:90px 0;
+    max-width:1200px;
+    width:92%;
+    margin:auto;
 }
 
-.kicker{
-    color:#ff4550;
-    font-size:14px;
+.small{
+    color:#ff3441;
     font-weight:1000;
-    letter-spacing:2px;
-    margin-bottom:18px;
+    letter-spacing:3px;
+    margin-bottom:20px;
 }
 
 .hero h1{
-    font-size:clamp(45px,8vw,90px);
-    line-height:.92;
-    font-weight:1000;
-    max-width:900px;
+    font-size:clamp(48px,8vw,90px);
+    line-height:.9;
+    max-width:850px;
 }
 
 .hero h1 span{
-    color:var(--red);
+    color:#e30613;
 }
 
 .hero p{
-    max-width:680px;
-    color:#bbb;
-    line-height:1.7;
+    color:#aaa;
+    max-width:650px;
+    font-size:18px;
+    line-height:1.6;
     margin-top:25px;
-    font-size:17px;
 }
 
 .buttons{
     display:flex;
-    flex-wrap:wrap;
     gap:12px;
-    margin-top:28px;
+    flex-wrap:wrap;
+    margin-top:30px;
 }
 
 .button{
-    padding:14px 20px;
+    padding:15px 22px;
     border-radius:9px;
     font-weight:900;
+    text-decoration:none;
 }
 
-.button-red{
-    background:var(--red);
+.red{
+    background:#e30613;
+    color:white;
 }
 
-.button-dark{
+.dark{
     background:#222;
+    color:white;
     border:1px solid #444;
 }
 
 /* SECTIONS */
 
 section{
-    padding:75px 0;
+    padding:70px 0;
 }
 
-.section-title{
-    font-size:36px;
+.container{
+    width:92%;
+    max-width:1200px;
+    margin:auto;
+}
+
+.title{
+    font-size:38px;
     font-weight:1000;
-    margin-bottom:8px;
 }
 
-.section-subtitle{
-    color:var(--muted);
+.subtitle{
+    color:#888;
+    margin-top:8px;
     margin-bottom:30px;
 }
 
-/* UPDATE STATUS */
+/* STATUS */
 
-.update-status{
+.status{
     display:inline-flex;
     align-items:center;
     gap:8px;
-    background:#13251a;
-    border:1px solid #285737;
-    color:#6ee39b;
+
+    background:#112318;
+    color:#66e59a;
+
+    border:1px solid #275d3b;
+
     padding:8px 13px;
     border-radius:30px;
+
     font-size:12px;
     font-weight:900;
+
     margin-bottom:20px;
 }
 
-.dot{
+.status-dot{
     width:8px;
     height:8px;
-    background:var(--green);
     border-radius:50%;
+    background:#25d366;
 }
 
 /* NIEUWS */
@@ -209,35 +213,31 @@ section{
     gap:20px;
 }
 
-.news-card{
-    background:var(--card);
+.news{
+    background:#151515;
     border:1px solid #292929;
     border-radius:15px;
     overflow:hidden;
     transition:.2s;
 }
 
-.news-card:hover{
-    transform:translateY(-4px);
+.news:hover{
+    transform:translateY(-5px);
     border-color:#555;
 }
 
-.news-image{
-    width:100%;
-    height:190px;
-    object-fit:cover;
-    display:block;
-    background:#222;
+.news-top{
+    height:8px;
+    background:#e30613;
 }
 
-.news-content{
-    padding:20px;
+.news-body{
+    padding:23px;
 }
 
-.news-tag{
+.tag{
     display:inline-block;
-    background:var(--red);
-    color:white;
+    background:#e30613;
     padding:6px 9px;
     border-radius:5px;
     font-size:10px;
@@ -245,29 +245,49 @@ section{
     margin-bottom:14px;
 }
 
-.news-card h3{
-    font-size:19px;
+.news h3{
+    font-size:20px;
     line-height:1.3;
 }
 
-.news-card p{
+.news p{
     color:#999;
-    line-height:1.55;
-    margin-top:11px;
     font-size:14px;
+    line-height:1.6;
+    margin-top:12px;
 }
 
-.news-date{
+.date{
     color:#666;
     font-size:12px;
-    margin-top:16px;
+    margin-top:18px;
 }
 
-.news-link{
-    display:inline-block;
-    color:#ff4550;
-    font-weight:900;
-    margin-top:16px;
+/* LEES KNOP */
+
+.article-button{
+    width:100%;
+    margin-top:18px;
+
+    padding:13px;
+
+    background:#e30613;
+    color:white;
+
+    border:0;
+    border-radius:8px;
+
+    font-weight:1000;
+    cursor:pointer;
+
+    font-size:14px;
+
+    transition:.2s;
+}
+
+.article-button:hover{
+    background:#ff1c28;
+    transform:translateY(-2px);
 }
 
 /* WEDSTRIJDEN */
@@ -278,12 +298,14 @@ section{
 }
 
 .match{
-    background:var(--card);
+    background:#151515;
     border:1px solid #292929;
     border-radius:14px;
     padding:20px;
+
     display:grid;
-    grid-template-columns:170px 1fr 180px;
+    grid-template-columns:180px 1fr 180px;
+
     align-items:center;
     gap:20px;
 }
@@ -298,50 +320,59 @@ section{
     align-items:center;
     justify-content:center;
     gap:18px;
+
     text-align:center;
-    font-weight:900;
+    font-weight:1000;
 }
 
 .vs{
-    color:#777;
-    font-size:12px;
+    color:#e30613;
+    font-size:14px;
 }
 
-.competition{
+.comp{
     text-align:right;
-    color:#ff4652;
-    font-size:13px;
+    color:#e30613;
     font-weight:900;
+    font-size:13px;
 }
 
 /* CLUB */
 
-.info-grid{
+.info{
     display:grid;
-    grid-template-columns:1fr 1fr;
+    grid-template-columns:repeat(2,1fr);
     gap:20px;
 }
 
-.panel{
-    background:var(--card);
+.card{
+    background:#151515;
     border:1px solid #292929;
     border-radius:15px;
     padding:25px;
 }
 
-.panel h3{
-    font-size:21px;
-    margin-bottom:18px;
+.card h3{
+    font-size:22px;
+    margin-bottom:20px;
 }
 
-.info-row{
+.row{
     display:flex;
     justify-content:space-between;
-    gap:10px;
-    background:var(--card2);
+
     padding:14px;
+
+    background:#202020;
     border-radius:8px;
+
     margin-bottom:9px;
+
+    color:#bbb;
+}
+
+.row strong{
+    color:white;
 }
 
 /* POLL */
@@ -350,12 +381,19 @@ section{
     background:
         linear-gradient(
             135deg,
-            #26080b,
+            #260508,
             #151515
         );
-    border:1px solid #422225;
+
+    border:1px solid #4a1b20;
     border-radius:18px;
+
     padding:30px;
+}
+
+.poll p{
+    color:#aaa;
+    margin-top:8px;
 }
 
 .poll-buttons{
@@ -366,36 +404,144 @@ section{
 }
 
 .poll-buttons button{
+    padding:17px;
+
     background:#222;
-    color:white;
-    border:1px solid #3a3a3a;
-    padding:16px;
+    border:1px solid #444;
     border-radius:9px;
+
+    color:white;
     cursor:pointer;
-    font-size:14px;
+
     font-weight:900;
+    font-size:14px;
 }
 
 .poll-buttons button:hover{
-    background:var(--red);
-    border-color:var(--red);
+    background:#e30613;
+    border-color:#e30613;
 }
 
 #voteResult{
-    margin-top:20px;
     color:#69e79a;
     font-weight:900;
+    margin-top:20px;
 }
 
-/* LOADING */
+/* ARTIKEL POPUP */
 
-.loading{
-    padding:30px;
-    background:var(--card);
-    border:1px solid #292929;
-    border-radius:14px;
-    text-align:center;
-    color:#999;
+.article-modal{
+    display:none;
+
+    position:fixed;
+    z-index:5000;
+
+    inset:0;
+
+    background:rgba(0,0,0,.85);
+
+    padding:25px;
+
+    overflow-y:auto;
+}
+
+.article-modal.show{
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+}
+
+.article-box{
+    width:min(800px,100%);
+
+    max-height:90vh;
+    overflow-y:auto;
+
+    background:#151515;
+
+    border:1px solid #444;
+
+    border-top:6px solid #e30613;
+
+    border-radius:16px;
+
+    padding:32px;
+
+    position:relative;
+
+    box-shadow:0 20px 80px rgba(0,0,0,.7);
+}
+
+.close{
+    position:absolute;
+
+    right:18px;
+    top:15px;
+
+    width:40px;
+    height:40px;
+
+    border:0;
+
+    border-radius:50%;
+
+    background:#292929;
+    color:white;
+
+    font-size:22px;
+
+    cursor:pointer;
+}
+
+.close:hover{
+    background:#e30613;
+}
+
+.article-tag{
+    color:#e30613;
+
+    font-size:12px;
+
+    font-weight:1000;
+
+    letter-spacing:2px;
+
+    margin-bottom:12px;
+}
+
+.article-box h2{
+    font-size:34px;
+
+    line-height:1.15;
+
+    margin-right:45px;
+}
+
+.article-info{
+    color:#777;
+
+    font-size:13px;
+
+    margin-top:12px;
+
+    padding-bottom:20px;
+
+    border-bottom:1px solid #333;
+}
+
+.article-text{
+    margin-top:25px;
+
+    color:#ddd;
+
+    font-size:16px;
+
+    line-height:1.8;
+}
+
+.article-text p{
+    margin-bottom:18px;
 }
 
 /* FOOTER */
@@ -406,16 +552,14 @@ footer{
     color:#777;
 }
 
-.footer-inner{
+.footer{
+    max-width:1200px;
+    width:92%;
+    margin:auto;
+
     display:flex;
     justify-content:space-between;
-    flex-wrap:wrap;
     gap:20px;
-}
-
-.footer-title{
-    color:white;
-    font-weight:900;
 }
 
 /* MOBILE */
@@ -426,19 +570,23 @@ footer{
         display:block;
     }
 
-    .nav-links{
+    .links{
         display:none;
+
         position:absolute;
+
+        top:70px;
         left:0;
         right:0;
-        top:72px;
+
         background:#080808;
-        border-bottom:1px solid #333;
+
         padding:20px;
+
         flex-direction:column;
     }
 
-    .nav-links.open{
+    .links.open{
         display:flex;
     }
 
@@ -446,7 +594,7 @@ footer{
         grid-template-columns:1fr;
     }
 
-    .info-grid{
+    .info{
         grid-template-columns:1fr;
     }
 
@@ -455,40 +603,55 @@ footer{
         text-align:center;
     }
 
-    .competition{
+    .comp{
         text-align:center;
     }
 
     .poll-buttons{
         grid-template-columns:1fr;
     }
+
+    .footer{
+        flex-direction:column;
+    }
+
+    .article-box{
+        padding:25px 20px;
+    }
+
+    .article-box h2{
+        font-size:27px;
+    }
 }
+
 </style>
 </head>
 
 <body>
 
-<!-- NAVBAR -->
 
-<nav class="navbar">
+<!-- NAV -->
 
-<div class="container nav-inner">
+<nav>
 
-    <a href="#home" class="logo">
-        <span class="logo-red">●</span>
-        FEYENOORD
-    </a>
+<div class="nav">
 
-    <button class="menu" id="menu">
-        ☰
-    </button>
+<div class="logo">
+    <span>●</span> FEYENOORD FANS
+</div>
 
-    <div class="nav-links" id="navLinks">
-        <a href="#nieuws">Nieuws</a>
-        <a href="#wedstrijden">Wedstrijden</a>
-        <a href="#club">Club</a>
-        <a href="#community">Poll</a>
-    </div>
+<button class="menu" onclick="toggleMenu()">
+    ☰
+</button>
+
+<div class="links" id="links">
+
+<a href="#nieuws">Nieuws</a>
+<a href="#wedstrijden">Wedstrijden</a>
+<a href="#club">Club</a>
+<a href="#poll">Poll</a>
+
+</div>
 
 </div>
 
@@ -497,35 +660,36 @@ footer{
 
 <!-- HERO -->
 
-<section class="hero" id="home">
+<section class="hero">
 
-<div class="container hero-content">
+<div class="hero-content">
 
-    <div class="kicker">
-        🔴⚪ FEYENOORD FANSPAGE
-    </div>
+<div class="small">
+    🔴⚪ ROTTERDAM
+</div>
 
-    <h1>
-        Alles over
-        <span>Feyenoord</span>
-    </h1>
+<h1>
+    Alles over
+    <span>Feyenoord</span>
+</h1>
 
-    <p>
-        Het laatste nieuws, actuele wedstrijden en
-        Feyenoord-community op één plek.
-    </p>
+<p>
+    Het laatste Feyenoord-nieuws,
+    het programma en een poll voor
+    alle supporters.
+</p>
 
-    <div class="buttons">
+<div class="buttons">
 
-        <a href="#nieuws" class="button button-red">
-            📰 Laatste nieuws
-        </a>
+<a href="#nieuws" class="button red">
+    📰 Laatste nieuws
+</a>
 
-        <a href="#wedstrijden" class="button button-dark">
-            📅 Wedstrijdschema
-        </a>
+<a href="#wedstrijden" class="button dark">
+    📅 Wedstrijden
+</a>
 
-    </div>
+</div>
 
 </div>
 
@@ -538,26 +702,134 @@ footer{
 
 <div class="container">
 
-    <div class="update-status">
-        <span class="dot"></span>
-        Automatisch bijgewerkt
-    </div>
+<div class="status">
+    <span class="status-dot"></span>
+    Actuele berichten
+</div>
 
-    <h2 class="section-title">
-        📰 Laatste nieuws
-    </h2>
+<h2 class="title">
+    📰 Laatste nieuws
+</h2>
 
-    <p class="section-subtitle">
-        Alleen recente Feyenoord-berichten worden getoond.
-    </p>
+<p class="subtitle">
+    Klik op een bericht om de samenvatting te lezen.
+</p>
 
-    <div id="newsList" class="news-grid">
 
-        <div class="loading">
-            Actueel nieuws laden...
-        </div>
+<div class="news-grid">
 
-    </div>
+
+<!-- NIEUWS 1 -->
+
+<article class="news">
+
+<div class="news-top"></div>
+
+<div class="news-body">
+
+<div class="tag">
+    FEYENOORD
+</div>
+
+<h3>
+    Feyenoord flitsend langs FC Utrecht
+</h3>
+
+<p>
+    Feyenoord boekte een overtuigende
+    overwinning in De Kuip.
+</p>
+
+<div class="date">
+    20 september 2026
+</div>
+
+<button
+    class="article-button"
+    onclick="openArticle(1)"
+>
+    📖 Lees de samenvatting →
+</button>
+
+</div>
+
+</article>
+
+
+<!-- NIEUWS 2 -->
+
+<article class="news">
+
+<div class="news-top"></div>
+
+<div class="news-body">
+
+<div class="tag">
+    CONTRACT
+</div>
+
+<h3>
+    Gjivai Zechiël verlengt contract
+</h3>
+
+<p>
+    De middenvelder blijft langer verbonden
+    aan Feyenoord.
+</p>
+
+<div class="date">
+    17 september 2026
+</div>
+
+<button
+    class="article-button"
+    onclick="openArticle(2)"
+>
+    📖 Lees de samenvatting →
+</button>
+
+</div>
+
+</article>
+
+
+<!-- NIEUWS 3 -->
+
+<article class="news">
+
+<div class="news-top"></div>
+
+<div class="news-body">
+
+<div class="tag">
+    FEYENOORD
+</div>
+
+<h3>
+    Van Bronckhorst blij voor Zechiël
+</h3>
+
+<p>
+    Nieuws rond Zechiël en Reiss Nelson.
+</p>
+
+<div class="date">
+    18 september 2026
+</div>
+
+<button
+    class="article-button"
+    onclick="openArticle(3)"
+>
+    📖 Lees de samenvatting →
+</button>
+
+</div>
+
+</article>
+
+
+</div>
 
 </div>
 
@@ -570,21 +842,144 @@ footer{
 
 <div class="container">
 
-    <h2 class="section-title">
-        📅 Wedstrijdschema
-    </h2>
+<div class="status">
+    <span class="status-dot"></span>
+    Programma
+</div>
 
-    <p class="section-subtitle">
-        Het schema wordt automatisch vernieuwd.
-    </p>
+<h2 class="title">
+    📅 Wedstrijden
+</h2>
 
-    <div id="matches" class="matches">
+<p class="subtitle">
+    De komende wedstrijden van Feyenoord.
+</p>
 
-        <div class="loading">
-            Wedstrijden laden...
-        </div>
 
-    </div>
+<div class="matches">
+
+
+<div class="match">
+
+<div class="match-date">
+    ZA 10 OKT<br>
+    18:45
+</div>
+
+<div class="teams">
+
+<span>Feyenoord</span>
+
+<span class="vs">VS</span>
+
+<span>AZ</span>
+
+</div>
+
+<div class="comp">
+    Eredivisie
+</div>
+
+</div>
+
+
+<div class="match">
+
+<div class="match-date">
+    WO 14 OKT<br>
+    18:45
+</div>
+
+<div class="teams">
+
+<span>Feyenoord</span>
+
+<span class="vs">VS</span>
+
+<span>Como</span>
+
+</div>
+
+<div class="comp">
+    Champions League
+</div>
+
+</div>
+
+
+<div class="match">
+
+<div class="match-date">
+    ZA 17 OKT<br>
+    20:00
+</div>
+
+<div class="teams">
+
+<span>Telstar</span>
+
+<span class="vs">VS</span>
+
+<span>Feyenoord</span>
+
+</div>
+
+<div class="comp">
+    Eredivisie
+</div>
+
+</div>
+
+
+<div class="match">
+
+<div class="match-date">
+    WO 21 OKT<br>
+    21:00
+</div>
+
+<div class="teams">
+
+<span>Real Betis</span>
+
+<span class="vs">VS</span>
+
+<span>Feyenoord</span>
+
+</div>
+
+<div class="comp">
+    Champions League
+</div>
+
+</div>
+
+
+<div class="match">
+
+<div class="match-date">
+    DI 03 NOV<br>
+    21:00
+</div>
+
+<div class="teams">
+
+<span>Feyenoord</span>
+
+<span class="vs">VS</span>
+
+<span>Internazionale</span>
+
+</div>
+
+<div class="comp">
+    Champions League
+</div>
+
+</div>
+
+
+</div>
 
 </div>
 
@@ -597,70 +992,75 @@ footer{
 
 <div class="container">
 
-    <h2 class="section-title">
-        🏟️ Feyenoord
-    </h2>
+<h2 class="title">
+    🏟️ Feyenoord
+</h2>
 
-    <p class="section-subtitle">
-        Rotterdam • De Kuip • Sinds 1908
-    </p>
-
-    <div class="info-grid">
-
-        <div class="panel">
-
-            <h3>🔴⚪ De club</h3>
-
-            <div class="info-row">
-                <span>Club</span>
-                <strong>Feyenoord</strong>
-            </div>
-
-            <div class="info-row">
-                <span>Stad</span>
-                <strong>Rotterdam</strong>
-            </div>
-
-            <div class="info-row">
-                <span>Stadion</span>
-                <strong>De Kuip</strong>
-            </div>
-
-            <div class="info-row">
-                <span>Opgericht</span>
-                <strong>1908</strong>
-            </div>
-
-        </div>
+<p class="subtitle">
+    Rotterdam • De Kuip • Sinds 1908
+</p>
 
 
-        <div class="panel">
+<div class="info">
 
-            <h3>🔄 Updates</h3>
+<div class="card">
 
-            <div class="info-row">
-                <span>Nieuws</span>
-                <strong>Automatisch</strong>
-            </div>
+<h3>
+    🔴⚪ De club
+</h3>
 
-            <div class="info-row">
-                <span>Wedstrijden</span>
-                <strong>Automatisch</strong>
-            </div>
+<div class="row">
+    <span>Naam</span>
+    <strong>Feyenoord</strong>
+</div>
 
-            <div class="info-row">
-                <span>Interval</span>
-                <strong>5 minuten</strong>
-            </div>
+<div class="row">
+    <span>Stad</span>
+    <strong>Rotterdam</strong>
+</div>
 
-            <div class="info-row">
-                <span>Laatste update</span>
-                <strong id="lastUpdate">--:--</strong>
-            </div>
+<div class="row">
+    <span>Stadion</span>
+    <strong>De Kuip</strong>
+</div>
 
-        </div>
+<div class="row">
+    <span>Opgericht</span>
+    <strong>1908</strong>
+</div>
 
-    </div>
+</div>
+
+
+<div class="card">
+
+<h3>
+    🔄 Website
+</h3>
+
+<div class="row">
+    <span>Nieuws</span>
+    <strong>Actueel</strong>
+</div>
+
+<div class="row">
+    <span>Programma</span>
+    <strong>Actueel</strong>
+</div>
+
+<div class="row">
+    <span>Taal</span>
+    <strong>Nederlands</strong>
+</div>
+
+<div class="row">
+    <span>Vernieuwing</span>
+    <strong>5 minuten</strong>
+</div>
+
+</div>
+
+</div>
 
 </div>
 
@@ -669,41 +1069,41 @@ footer{
 
 <!-- POLL -->
 
-<section id="community">
+<section id="poll">
 
 <div class="container">
 
 <div class="poll">
 
-    <h2>
-        💬 Wie is jouw favoriete speler?
-    </h2>
+<h2>
+    💬 Wie is jouw favoriete speler?
+</h2>
 
-    <p style="color:#aaa;margin-top:10px;">
-        Stem op jouw favoriete speler.
-    </p>
+<p>
+    Kies één van de vier spelers.
+</p>
 
-    <div class="poll-buttons">
+<div class="poll-buttons">
 
-        <button onclick="vote('Sem Steijn')">
-            ⚽ Sem Steijn
-        </button>
+<button onclick="vote('Sem Steijn')">
+    ⚽ Sem Steijn
+</button>
 
-        <button onclick="vote('Shaq van Persie')">
-            ⚽ Shaq van Persie
-        </button>
+<button onclick="vote('Shaq van Persie')">
+    ⚽ Shaq van Persie
+</button>
 
-        <button onclick="vote('Ferry Ferri')">
-            ⚽ Ferry Ferri
-        </button>
+<button onclick="vote('Ferry Ferri')">
+    ⚽ Ferry Ferri
+</button>
 
-        <button onclick="vote('Luciano Valente')">
-            ⚽ Luciano Valente
-        </button>
+<button onclick="vote('Luciano Valente')">
+    ⚽ Luciano Valente
+</button>
 
-    </div>
+</div>
 
-    <p id="voteResult"></p>
+<div id="voteResult"></div>
 
 </div>
 
@@ -712,28 +1112,76 @@ footer{
 </section>
 
 
+<!-- ARTIKEL POPUP -->
+
+<div
+    class="article-modal"
+    id="articleModal"
+    onclick="closeOutside(event)"
+>
+
+<div class="article-box">
+
+<button
+    class="close"
+    onclick="closeArticle()"
+>
+    ×
+</button>
+
+
+<div
+    class="article-tag"
+    id="articleTag"
+>
+    FEYENOORD
+</div>
+
+
+<h2 id="articleTitle"></h2>
+
+
+<div
+    class="article-info"
+    id="articleDate"
+></div>
+
+
+<div
+    class="article-text"
+    id="articleText"
+></div>
+
+
+</div>
+
+</div>
+
+
 <!-- FOOTER -->
 
 <footer>
 
-<div class="container footer-inner">
+<div class="footer">
 
-    <div>
+<div>
 
-        <div class="footer-title">
-            🔴⚪ Feyenoord Nieuws
-        </div>
+<strong style="color:white">
+    🔴⚪ Feyenoord Fans
+</strong>
 
-        <div style="margin-top:7px;">
-            Voor Feyenoord-supporters.
-        </div>
+<br>
 
-    </div>
+Voor Feyenoord-supporters.
 
-    <div>
-        Laatste update:
-        <span id="footerUpdate">--:--</span>
-    </div>
+</div>
+
+<div>
+
+Laatste controle:
+<span id="time"></span>
+
+</div>
 
 </div>
 
@@ -742,451 +1190,273 @@ footer{
 
 <script>
 
-/* ================= MENU ================= */
+/* MENU */
 
-const menu =
-    document.getElementById("menu");
+function toggleMenu(){
 
-const navLinks =
-    document.getElementById("navLinks");
+    document
+        .getElementById("links")
+        .classList.toggle("open");
 
-menu.addEventListener("click",()=>{
-    navLinks.classList.toggle("open");
-});
-
-document.querySelectorAll(".nav-links a")
-.forEach(link=>{
-    link.addEventListener("click",()=>{
-        navLinks.classList.remove("open");
-    });
-});
-
-
-/* ================= BRONNEN ================= */
-
-/*
-   Wedstrijden worden automatisch opgehaald
-   van de voetbaldata-API.
-
-   Nieuws wordt opgehaald en daarna gefilterd
-   zodat alleen recente Feyenoord-berichten
-   worden weergegeven.
-*/
-
-const MATCHES_API =
-"https://site.api.espn.com/apis/site/v2/sports/soccer/ned.1/teams/feyenoord/schedule?limit=100";
-
-const NEWS_API =
-"https://site.api.espn.com/apis/site/v2/sports/soccer/ned.1/news?limit=50";
-
-
-/* ================= VEILIGE TEKST ================= */
-
-function safe(text){
-
-    const element =
-        document.createElement("div");
-
-    element.textContent =
-        text || "";
-
-    return element.innerHTML;
 }
 
 
-/* ================= DATUM ================= */
+/* ARTIKELEN */
 
-function formatDate(value){
+const articles = {
 
-    const date =
-        new Date(value);
+    1:{
 
-    if(isNaN(date.getTime())){
-        return "Datum onbekend";
+        tag:"FEYENOORD",
+
+        title:
+        "Feyenoord flitsend langs FC Utrecht",
+
+        date:
+        "20 september 2026",
+
+        text:`
+
+        <p>
+        Feyenoord heeft FC Utrecht met 5-0
+        verslagen in De Kuip. De ploeg begon
+        bijzonder sterk aan de wedstrijd en stond
+        al snel met 2-0 voor.
+        </p>
+
+        <p>
+        Anis Hadj Moussa scoorde twee keer.
+        Ook Nacho Ferri en Luciano Valente
+        kwamen op het scorebord. Gaoussou
+        Diarra maakte de 5-0 en scoorde daarmee
+        zijn eerste officiële doelpunt voor
+        Feyenoord.
+        </p>
+
+        <p>
+        Reiss Nelson maakte bovendien als
+        invaller zijn rentree in De Kuip.
+        Feyenoord gaat met 17 punten uit
+        zeven wedstrijden de interlandperiode in.
+        </p>
+
+        <p>
+        De volgende Eredivisie-wedstrijd is
+        Feyenoord tegen AZ op zaterdag
+        10 oktober om 18:45 uur.
+        </p>
+
+        `
+
+    },
+
+
+    2:{
+
+        tag:"CONTRACT",
+
+        title:
+        "Gjivai Zechiël verlengt contract bij Feyenoord",
+
+        date:
+        "17 september 2026",
+
+        text:`
+
+        <p>
+        Gjivai Zechiël heeft zijn contract bij
+        Feyenoord verlengd. De middenvelder
+        blijft daardoor tot medio 2029 aan
+        de club verbonden.
+        </p>
+
+        <p>
+        Zechiël kwam als jonge speler bij de
+        Feyenoord Academy terecht en maakte
+        later zijn debuut voor het eerste elftal.
+        </p>
+
+        <p>
+        Na verhuurperiodes bij Sparta Rotterdam
+        en FC Utrecht keerde hij deze zomer terug
+        naar Rotterdam. Daar groeide hij snel uit
+        tot een belangrijke speler in het team.
+        </p>
+
+        <p>
+        De contractverlenging is een teken van
+        het vertrouwen dat Feyenoord in de
+        ontwikkeling van de middenvelder heeft.
+        </p>
+
+        `
+
+    },
+
+
+    3:{
+
+        tag:"FEYENOORD",
+
+        title:
+        "Van Bronckhorst blij voor Zechiël",
+
+        date:
+        "18 september 2026",
+
+        text:`
+
+        <p>
+        Trainer Giovanni van Bronckhorst sprak
+        positief over Gjivai Zechiël nadat de
+        middenvelder was geselecteerd voor
+        het Nederlands elftal.
+        </p>
+
+        <p>
+        Ook Reiss Nelson maakte deel uit van
+        de wedstrijdselectie. De aanvaller
+        stond daarmee voor zijn mogelijke
+        rentree bij Feyenoord.
+        </p>
+
+        <p>
+        Zechiël heeft zich in korte tijd
+        ontwikkeld tot een belangrijke speler
+        binnen de ploeg.
+        </p>
+
+        `
+
     }
 
-    return date.toLocaleString("nl-NL",{
-        day:"2-digit",
-        month:"long",
-        year:"numeric",
-        hour:"2-digit",
-        minute:"2-digit"
-    });
+};
+
+
+/* OPEN ARTIKEL */
+
+function openArticle(id){
+
+    const article =
+        articles[id];
+
+    document
+        .getElementById("articleTag")
+        .textContent =
+        article.tag;
+
+    document
+        .getElementById("articleTitle")
+        .textContent =
+        article.title;
+
+    document
+        .getElementById("articleDate")
+        .textContent =
+        article.date;
+
+    document
+        .getElementById("articleText")
+        .innerHTML =
+        article.text;
+
+    document
+        .getElementById("articleModal")
+        .classList.add("show");
+
+    document.body.style.overflow =
+        "hidden";
+
 }
 
 
-/* ================= NIEUWS ================= */
+/* SLUITEN */
 
-async function loadNews(){
+function closeArticle(){
 
-    const list =
-        document.getElementById("newsList");
+    document
+        .getElementById("articleModal")
+        .classList.remove("show");
 
-    try{
+    document.body.style.overflow =
+        "";
 
-        const response =
-            await fetch(NEWS_API);
-
-        if(!response.ok){
-            throw new Error("Nieuws fout");
-        }
-
-        const data =
-            await response.json();
-
-        let articles =
-            data.articles || [];
+}
 
 
-        /*
-           Alleen Feyenoord-artikelen.
-        */
+/* BUITEN HET VENSTER KLIKKEN */
 
-        articles =
-            articles.filter(article=>{
+function closeOutside(event){
 
-                const text =
-                    (
-                        (article.headline || "") +
-                        " " +
-                        (article.description || "")
-                    ).toLowerCase();
+    if(
+        event.target.id ===
+        "articleModal"
+    ){
 
-                return text.includes("feyenoord");
-            });
+        closeArticle();
 
-
-        /*
-           Alleen nieuws van de afgelopen
-           7 dagen.
-        */
-
-        const minimumDate =
-            Date.now() -
-            (7 * 24 * 60 * 60 * 1000);
-
-
-        articles =
-            articles.filter(article=>{
-
-                const date =
-                    new Date(
-                        article.published
-                    ).getTime();
-
-                return date >= minimumDate;
-            });
-
-
-        /*
-           Nieuwste eerst.
-        */
-
-        articles.sort((a,b)=>{
-
-            return new Date(b.published)
-                -
-                   new Date(a.published);
-
-        });
-
-
-        if(!articles.length){
-
-            list.innerHTML = `
-                <div class="loading">
-                    Geen recente Feyenoord-berichten gevonden.
-                </div>
-            `;
-
-            return;
-        }
-
-
-        list.innerHTML = "";
-
-
-        articles
-        .slice(0,9)
-        .forEach(article=>{
-
-            const card =
-                document.createElement("article");
-
-            card.className =
-                "news-card";
-
-
-            const image =
-                article.images?.[0]?.url || "";
-
-
-            const link =
-                article.links?.web?.href || "#";
-
-
-            card.innerHTML = `
-
-                ${
-                    image
-                    ?
-                    `
-                    <img
-                        class="news-image"
-                        src="${image}"
-                        alt="Feyenoord nieuws"
-                    >
-                    `
-                    :
-                    `
-                    <div class="news-image"></div>
-                    `
-                }
-
-                <div class="news-content">
-
-                    <span class="news-tag">
-                        FEYENOORD
-                    </span>
-
-                    <h3>
-                        ${safe(article.headline)}
-                    </h3>
-
-                    <p>
-                        ${safe(
-                            article.description ||
-                            "Lees het volledige nieuwsbericht."
-                        )}
-                    </p>
-
-                    <div class="news-date">
-                        ${formatDate(article.published)}
-                    </div>
-
-                    <a
-                        class="news-link"
-                        href="${link}"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-                        Lees volledig bericht →
-                    </a>
-
-                </div>
-            `;
-
-            list.appendChild(card);
-
-        });
-
-    }catch(error){
-
-        console.error(error);
-
-        list.innerHTML = `
-
-            <div class="loading">
-
-                ⚠️ Actueel nieuws kon niet worden geladen.
-
-                <br><br>
-
-                We proberen het automatisch opnieuw.
-
-            </div>
-        `;
     }
+
 }
 
 
-/* ================= WEDSTRIJDEN ================= */
+/* ESCAPE */
 
-async function loadMatches(){
+document.addEventListener(
+    "keydown",
+    function(event){
 
-    const list =
-        document.getElementById("matches");
+        if(
+            event.key === "Escape"
+        ){
 
-    try{
+            closeArticle();
 
-        const response =
-            await fetch(MATCHES_API);
-
-        if(!response.ok){
-            throw new Error("Wedstrijd fout");
         }
 
-        const data =
-            await response.json();
-
-        const events =
-            data.events || [];
-
-
-        list.innerHTML = "";
-
-
-        events
-        .slice(0,20)
-        .forEach(event=>{
-
-            const competition =
-                event.competitions?.[0];
-
-            const teams =
-                competition?.competitors || [];
-
-
-            let home =
-                "Thuisteam";
-
-            let away =
-                "Uitteam";
-
-            let homeScore =
-                "";
-
-            let awayScore =
-                "";
-
-
-            teams.forEach(team=>{
-
-                const name =
-                    team.team?.displayName ||
-                    team.team?.name ||
-                    "Onbekend";
-
-
-                if(team.homeAway === "home"){
-
-                    home = name;
-                    homeScore =
-                        team.score ?? "";
-
-                }else{
-
-                    away = name;
-                    awayScore =
-                        team.score ?? "";
-
-                }
-
-            });
-
-
-            const status =
-                competition
-                ?.status
-                ?.type
-                ?.description || "";
-
-
-            const league =
-                event.league?.name ||
-                "Voetbal";
-
-
-            let score =
-                "VS";
-
-
-            if(
-                homeScore !== "" &&
-                awayScore !== ""
-            ){
-
-                score =
-                    homeScore +
-                    " - " +
-                    awayScore;
-
-            }
-
-
-            const match =
-                document.createElement("div");
-
-            match.className =
-                "match";
-
-
-            match.innerHTML = `
-
-                <div class="match-date">
-                    ${formatDate(event.date)}
-                </div>
-
-                <div class="teams">
-
-                    <span>
-                        ${safe(home)}
-                    </span>
-
-                    <span class="vs">
-                        ${score}
-                    </span>
-
-                    <span>
-                        ${safe(away)}
-                    </span>
-
-                </div>
-
-                <div class="competition">
-
-                    ${safe(league)}
-
-                    <br>
-
-                    <span style="color:#777;">
-                        ${safe(status)}
-                    </span>
-
-                </div>
-
-            `;
-
-            list.appendChild(match);
-
-        });
-
-
-        if(!events.length){
-
-            list.innerHTML = `
-                <div class="loading">
-                    Geen wedstrijden gevonden.
-                </div>
-            `;
-        }
-
-    }catch(error){
-
-        console.error(error);
-
-        list.innerHTML = `
-
-            <div class="loading">
-
-                ⚠️ Het wedstrijdschema is tijdelijk niet beschikbaar.
-
-                <br><br>
-
-                Automatisch opnieuw proberen...
-
-            </div>
-        `;
     }
+);
+
+
+/* POLL */
+
+function vote(player){
+
+    const key =
+        "vote_" + player;
+
+    let amount =
+        Number(
+            localStorage.getItem(key) || 0
+        );
+
+    amount++;
+
+    localStorage.setItem(
+        key,
+        amount
+    );
+
+    document
+        .getElementById("voteResult")
+        .textContent =
+        "✅ Je hebt gestemd op " +
+        player + "!";
+
 }
 
 
-/* ================= UPDATE TIJD ================= */
+/* TIJD */
 
 function updateTime(){
 
-    const time =
-        new Date().toLocaleTimeString(
+    const now =
+        new Date();
+
+    document
+        .getElementById("time")
+        .textContent =
+        now.toLocaleTimeString(
             "nl-NL",
             {
                 hour:"2-digit",
@@ -1194,65 +1464,24 @@ function updateTime(){
             }
         );
 
-    document.getElementById("lastUpdate")
-        .textContent = time;
-
-    document.getElementById("footerUpdate")
-        .textContent = time;
 }
 
-
-/* ================= POLL ================= */
-
-function vote(player){
-
-    const key =
-        "feyenoord_vote_" + player;
-
-    const old =
-        Number(
-            localStorage.getItem(key) || 0
-        );
-
-    localStorage.setItem(
-        key,
-        old + 1
-    );
-
-    document.getElementById("voteResult")
-        .textContent =
-        "✅ Je stem op " +
-        player +
-        " is opgeslagen!";
-
-}
-
-
-/* ================= ALLES VERNIEUWEN ================= */
-
-async function updateSite(){
-
-    await Promise.all([
-        loadNews(),
-        loadMatches()
-    ]);
-
-    updateTime();
-}
-
-
-/* ================= START ================= */
-
-updateSite();
-
-
-/*
-   Elke 5 minuten controleren
-   op nieuwe gegevens.
-*/
+updateTime();
 
 setInterval(
-    updateSite,
+    updateTime,
+    5 * 60 * 1000
+);
+
+
+/* AUTOMATISCHE PAGINA-UPDATE */
+
+setInterval(
+    function(){
+
+        location.reload();
+
+    },
     5 * 60 * 1000
 );
 
